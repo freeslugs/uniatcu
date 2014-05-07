@@ -1,33 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>uniatcu by freeslugs</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="uniatcu : " />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>uniatcu</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>uniatcu</h1>
-        <p></p>
 
-        <p class="view"><a href="https://github.com/freeslugs/uniatcu">View the Project on GitHub <small>freeslugs/uniatcu</small></a></p>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/freeslugs/uniatcu">View on GitHub</a>
 
+          <h1 id="project_title">uniatcu</h1>
+          <h2 id="project_tagline"></h2>
 
-        <ul>
-          <li><a href="https://github.com/freeslugs/uniatcu/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/freeslugs/uniatcu/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/freeslugs/uniatcu">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/freeslugs/uniatcu/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/freeslugs/uniatcu/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h2>
 <a name="how-do-you-use-this-site" class="anchor" href="#how-do-you-use-this-site"><span class="octicon octicon-link"></span></a>how do you use this site?</h2>
 
@@ -38,49 +41,63 @@
 <h2>
 <a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
 
-<p>/info - Get info about a particular uni</p>
+<h3>
+<a name="get-info-about-a-particular-uni" class="anchor" href="#get-info-about-a-particular-uni"><span class="octicon octicon-link"></span></a>Get info about a particular uni</h3>
+
+<p>path: /info</p>
 
 <p>params: uni</p>
 
-<p>e.g. uniatcu.herokuapp.com/info?uni=zjn2101</p>
+<p>e.g. <code>uniatcu.herokuapp.com/info?uni=zjn2101</code></p>
 
 <p>that's zach's uni. he's super cool. </p>
 
-<p>response: 
-{
-  "data": {
-    "department": "computer science", 
-    "email": "<a href="mailto:zjn2101@columbia.edu">zjn2101@columbia.edu</a>", 
-    "home addr": "514 special interest community", 
-    "name": "Zachary James Newman", 
-    "title": "student, columbia college", 
-    "uni": "zjn2101"
-  }
-}</p>
+<p>response: </p>
+
+<div class="highlight highlight-javascript"><pre><span class="p">{</span>
+   <span class="s2">"data"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"department"</span><span class="o">:</span> <span class="s2">"computer science"</span><span class="p">,</span> 
+    <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"zjn2101@columbia.edu"</span><span class="p">,</span> 
+    <span class="s2">"home addr"</span><span class="o">:</span> <span class="s2">"514 special interest community"</span><span class="p">,</span> 
+    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Zachary James Newman"</span><span class="p">,</span> 
+    <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"student, columbia college"</span><span class="p">,</span> 
+    <span class="s2">"uni"</span><span class="o">:</span> <span class="s2">"zjn2101"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 
 <h2>
 <a name="errors" class="anchor" href="#errors"><span class="octicon octicon-link"></span></a>Errors</h2>
 
 <p>sometimes you get an error. here's some info and how to help.</p>
 
-<p>e.g. 
-{
-  "error": "length is too short"
-}</p>
+<p>e.g. </p>
+
+<div class="highlight highlight-javascript"><pre><span class="p">{</span>
+  <span class="s2">"error"</span><span class="o">:</span> <span class="s2">"length is too short"</span>
+<span class="p">}</span>
+</pre></div>
 
 <h3>
 <a name="cheat-sheet" class="anchor" href="#cheat-sheet"><span class="octicon octicon-link"></span></a>cheat sheet</h3>
 
-<p>please enter uni - you didn't enter the param "uni" properly
-length is too short - it must be at least 5 characters
-person not found - he's not in the database. you lose. </p>
+<p><code>"please enter uni"</code> - you didn't enter the param "uni" properly</p>
+
+<p><code>"length is too short"</code> - it must be at least 5 characters</p>
+
+<p><code>"person not found"</code> - he's not in the database. you lose. </p>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/freeslugs">freeslugs</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">uniatcu maintained by <a href="https://github.com/freeslugs">freeslugs</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+
     
+
   </body>
 </html>
