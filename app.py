@@ -1,6 +1,6 @@
 import os
 import requests
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, redirect
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
