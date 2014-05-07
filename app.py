@@ -8,7 +8,7 @@ app.debug = True
 
 app.route('/')
 def index():
-	redirect("http://freeslugs.github.io/uniatcu/", code=302)
+	return redirect("http://freeslugs.github.io/uniatcu/", code=302)
 
 @app.route('/info')
 def main():
