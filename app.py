@@ -46,9 +46,26 @@ def main():
 			i += 1
 		return jsonify({"data": person}) 
 
-if __name__ == '__main__':
-	app.run()
+@app.route('/exists')
+def exist():
+	uni = request.args.get('uni')
 
+	if not uni:
+		return error("please enter uni")
+
+	elif len(uni) < 6:
+		return error("length is too short")
+
+	else:
+		r = requests.get('https://directory.columbia.edu/people/uni?code=' + uni)
+		if uni in r.text:
+			return jsonify({"exists": "true"}) 
+		else: 
+			return jsonify({"exists": "false"}) 
 
 def error(error="unknown error has occured"):
 	return jsonify({"error": error})
+
+
+if __name__ == '__main__':
+	app.run()
