@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 app = Flask(__name__)
 app.debug = True
 
-app.route('/')
+@app.route('/')
 def index():
 	return redirect("http://freeslugs.github.io/uniatcu/", code=302)
 
