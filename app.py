@@ -6,6 +6,10 @@ from bs4 import BeautifulSoup
 app = Flask(__name__)
 app.debug = True
 
+app.route('/')
+def index():
+	redirect("http://uniatcu.github.io/", code=302)
+
 @app.route('/info')
 def main():
 	uni = request.args.get('uni')
