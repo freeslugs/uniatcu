@@ -18,10 +18,6 @@ def main():
 	if not uni:
 		return error("please enter uni")
 		
-	
-	elif len(uni) < 6:
-		return error("length is too short")		
-
 	else:
 		r = requests.get('https://directory.columbia.edu/people/uni?code=' + uni)
 		soup = BeautifulSoup(r.text)
