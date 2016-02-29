@@ -37,13 +37,20 @@ def main():
 
 			for j in range(0, len(td.contents)/2):
 				left = td.contents[j*2].text.lower()
-				right = td.contents[j*2+1].text.lower()
+				right = td.contents[j*2+1]
+				# prettify address
+				# replace br tags with ", "
+				count = str(right).count("<br/>") - 1
+				right = BeautifulSoup(str(right).replace("<br/>", ", ", count))
+				
+				right = right.text.lower() 
 				left = left.replace(":", "")
 				right = right.replace(":", "")
 				if left and right and left != u"\u00a0" and right != u"\u00a0":
 					person[left] = right
 
 			i += 1
+
 		return jsonify({"data": person}) 
 
 @app.route('/exists')
